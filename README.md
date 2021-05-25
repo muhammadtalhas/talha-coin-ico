@@ -7,6 +7,8 @@ TalhaCoin is my first solo full-scale ethereum blockchain project. It was create
 ## ICO
 I ICO'd the coin and donated the raised Ethereum to charity to get the whole experience of deploying token to the blockchain. 
 
+[talhacoin.com](https://www.talhacoin.com)
+
 --Transfer Receipt-- //TODO post proof transaction block link when ICO complete
 
 ## Etherscan Link
