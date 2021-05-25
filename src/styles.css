@@ -1,0 +1,4 @@
+/* Elastic UI Library doesnt let me make modal backgrounds transparent so screw em, I'll override their css*/
+.euiOverlayMask {
+    background: transparent;
+}
