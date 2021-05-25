@@ -98,7 +98,17 @@ function App() {
         TalhaTokenSaleContract.current.deployed()
             .then(instance => {
                 tokenSale = instance;
-                return tokenSale.buyTokens(numberOfTokens, {from: account, value: tokenPrice * numberOfTokens});
+                /* Truffles autogas feature isnt working properly. Im not sure why.
+                    Testing this flow on the rinkeyby test net shows that it takes 48,909 gas
+                    im manually applying a max limit of 65000 because metamask was applying some crazy high value.
+                    Since the ETH EVM is deterministic, the gas value will ALWAYS be 48909 but a buffer is still a good idea
+                 */
+
+                return tokenSale.buyTokens(numberOfTokens, {
+                    from: account,
+                    value: tokenPrice * numberOfTokens,
+                    gasLimit: 65000
+                });
             })
             .then(receipt => {
                 console.log(receipt);
@@ -110,6 +120,7 @@ function App() {
                 setTransacting(false)
             })
             .catch(error => {
+                console.log(error);
                 setTransacting(false);
                 setToasts(toasts.concat({
                     title: 'Could not complete the transaction',
@@ -177,6 +188,7 @@ function App() {
             });
             TalhaTokenContract.current.setProvider(web3Provider.currentProvider);
             TalhaTokenSaleContract.current.setProvider(web3Provider.currentProvider);
+            TalhaTokenSaleContract.current.autoGas = true;
         }
     }, [web3Provider]);
 
@@ -339,7 +351,9 @@ function App() {
                 dismissToast={removeToast}
                 toastLifeTimeMs={5000}/>
             <EuiBottomBar>
-                <EuiText color="default">Token Address: <EuiLink href={'https://etherscan.io/address/0x3dbc4E75ffCEeB080691b889523fB458D77318C2'} target="_blank">0x3dbc4E75ffCEeB080691b889523fB458D77318C2</EuiLink></EuiText>
+                <EuiText color="default">Token Address: <EuiLink
+                    href={'https://etherscan.io/address/0x3dbc4E75ffCEeB080691b889523fB458D77318C2'}
+                    target="_blank">0x3dbc4E75ffCEeB080691b889523fB458D77318C2</EuiLink></EuiText>
             </EuiBottomBar>
         </div>
     );
