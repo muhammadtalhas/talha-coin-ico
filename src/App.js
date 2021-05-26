@@ -108,7 +108,7 @@ function App() {
                 return tokenSale.buyTokens(numberOfTokens, {
                     from: account,
                     value: tokenPrice * numberOfTokens,
-                    gasLimit: 65000
+                    gasLimit: 85000
                 });
             })
             .then(receipt => {
