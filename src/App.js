@@ -26,7 +26,8 @@ import {
     EuiImage,
     EuiLink,
     EuiGlobalToastList,
-    EuiBottomBar
+    EuiBottomBar,
+    EuiAccordion
 } from '@elastic/eui';
 import '@elastic/eui/dist/eui_theme_dark.css';
 
@@ -277,6 +278,100 @@ function App() {
                                     />
                                 </>
                             }/>
+                            <EuiAccordion
+                                id={0}
+                                buttonContent="What is this?"
+                                paddingSize="l">
+                                <EuiText size="s">
+                                    <p>This was my first end-to-end project to help me learn blockchain development.
+                                        Everything you see here is hosted on my local server, and all backend
+                                        communication happens with the live Ethereum Blockchain!</p>
+                                </EuiText>
+                            </EuiAccordion>
+                            <EuiSpacer/>
+                            <EuiAccordion
+                                id={1}
+                                buttonContent="What is an ERC20 token?"
+                                paddingSize="l">
+                                <EuiText size="s">
+                                    <p>An ERC20 token is a blockchain-based asset with similar functionality to bitcoin,
+                                        ether, and bitcoin cash: it can hold value and be sent and received.
+                                        The major difference between ERC20 tokens and other cryptocurrencies is that
+                                        ERC20 tokens are created and hosted on the Ethereum blockchain, whereas bitcoin
+                                        and bitcoin cash are the native currencies of their respective blockchains.
+                                        ERC20 tokens are stored and sent using ethereum addresses and transactions, and
+                                        use gas to cover transaction fees.</p>
+                                    <p>Talha Coin is an implementation of the ERC20 standard and can be sent over the
+                                        Ethereum network just like any <EuiLink href="https://etherscan.io/tokens"
+                                                                                target="_blank"> other ERC20
+                                            tokens</EuiLink></p>
+                                </EuiText>
+                            </EuiAccordion>
+                            <EuiSpacer/>
+                            <EuiAccordion
+                                id={2}
+                                buttonContent="What is an ICO?"
+                                paddingSize="l">
+                                <EuiText size="s">
+                                    <p>An initial coin offering (ICO) or initial currency offering is a type of funding
+                                        using cryptocurrencies. It is often a form of crowdfunding. In an ICO, a
+                                        quantity of cryptocurrency is sold in the form of "tokens" ("coins") to
+                                        speculators or investors, in exchange for legal tender or other (generally
+                                        established and more stable) cryptocurrencies such as Bitcoin or Ethereum. The
+                                        tokens are promoted as future functional units of currency if or when the ICO's
+                                        funding goal is met and the project successfully launches.</p>
+                                </EuiText>
+                            </EuiAccordion>
+                            <EuiSpacer/>
+                            <EuiAccordion
+                                id={3}
+                                buttonContent="What is Metamask?"
+                                paddingSize="l">
+                                <EuiText size="s">
+                                    <p><EuiLink href="https://metamask.io/" target="_blank">Check out their website here
+                                        with a neat intro video</EuiLink></p>
+                                </EuiText>
+                            </EuiAccordion>
+                            <EuiSpacer/>
+                            <EuiAccordion
+                                id={4}
+                                buttonContent="Where does the Ether I pay go?"
+                                paddingSize="l">
+                                <EuiText size="s">
+                                    <p>The Ether is stored at the <EuiLink
+                                        href="https://etherscan.io/address/0xe6049c65c847f24647dcaae110c0d3476addb075"
+                                        target="_blank">this smart contract address</EuiLink> but
+                                        will be transferred over to another account at the end of this test. I will then
+                                        donate 100% of the Ether to the charity linked at the top of this page. Please
+                                        not that the charity chosen may change. If you are buying this to support a
+                                        charity, I urge you to donate directly. Once the funds are transferred, the
+                                        transaction will be posted here for anyone to verify.</p>
+                                </EuiText>
+                            </EuiAccordion>
+                            <EuiSpacer/>
+                            <EuiAccordion
+                                id={5}
+                                buttonContent="Where can I learn more about the technical aspect of this project?"
+                                paddingSize="l">
+                                <EuiText size="s">
+                                    <p><EuiLink href="https://github.com/muhammadtalhas/talha-coin" target="_blank">Source
+                                        code is available here!</EuiLink></p>
+                                    <p><EuiLink href="https://twitter.com/CaptainPandaz" target="_blank">Feel free to
+                                        reach out to me on twitter</EuiLink></p>
+                                </EuiText>
+                            </EuiAccordion>
+                            <EuiSpacer/>
+                            <EuiAccordion
+                                id={6}
+                                buttonContent="I want to get the full experience of this but I dont want to spend my real ether!"
+                                paddingSize="l">
+                                <EuiText size="s">
+                                    <p>No problem! Talha Coin is also deployed on the Rinkeby Test Network where Ether is free and worthless!</p>
+                                    <p>Configure your metamask chrome extension to connect to the Rinkeby Test Network and connect this application and you'll be routed to the test network ICO!</p>
+                                    <p>If you need to add ether to your test account, try out <EuiLink href="https://faucet.rinkeby.io/" target="_blank">The Rinkeby Faucet</EuiLink></p>
+                                </EuiText>
+                            </EuiAccordion>
+                            <EuiSpacer/>
                         </EuiPageContent>
                     </EuiPageContent>
                 </EuiPageBody>
