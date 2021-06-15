@@ -250,7 +250,7 @@ function App() {
                             <EuiEmptyPrompt title={<span>Talha Coin ICO</span>} body={
                                 <>
                                     <EuiHealth
-                                        color={web3Provider ? "success" : "danger"}>{web3Provider ? `Connected to the ${network} ETH Blockchain` : "Disconnected..."}</EuiHealth>
+                                        color={web3Provider ? "success" : "danger"}>{web3Provider ? `Connected to the ${network} ETH Blockchain` : "Disconnected... Connect to Metamask using the button above!"}</EuiHealth>
                                     <EuiTitle size="xxs">
                                         <h5>Number of Coins sold!</h5>
                                     </EuiTitle>
